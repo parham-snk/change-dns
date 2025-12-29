@@ -1,5 +1,9 @@
 # how to use 
 
+## Dependencies
+- electron
+- electron-builder
+  
 ## install packages
 first install the packages!
 
