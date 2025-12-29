@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="loading">
+        <h1> عامو حوصله کن</h1>
+    </div>
+    <div class="blur"></div>
+    <div class="content">
+        <nav>
+            <p>DNS Changer</p>
+            <div id="status"></div>
+            <button id="exit">X</button>
+        </nav>
+        <section>
+            <button id="DHCP" class="box" onclick="">
+                <h1>DHCP</h1>
+            </button>
+            <button id="setShekan" class="box">
+                <h1>شکن</h1>
+            </button>
+            <div class="box">
+            </div>
+        </section>
+    </div>
+    <script>
+        function _(id) {
+            return document.getElementById(id)
+        }
+        document.getElementById("exit").addEventListener("click", () => {
+            window.api.exit()
+        })
+        _("DHCP").addEventListener("click", () => {
+            _("loading").style.display = "flex"
+            window.api.setDHCP()
+        })
+        _("setShekan").addEventListener("click", () => {
+            _("loading").style.display = "flex"
+            window.api.setShekan()
+        })
+        window.api.success(data => {
+            _("status").innerHTML = data.text
+            _("loading").style.display = "none"
+            setTimeout(() => {
+                _("status").innerHTML = " "
+            }, 2000);
+        })
+        window.api.error(data => {
+            _("loading").style.display = "none"
+            _("status").innerHTML = data.text
+            setTimeout(() => {
+                _("status").innerHTML = " "
+            }, 2000);
+        })
+
+    </script>
+</body>
+
+
+</html>

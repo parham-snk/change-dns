@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+body {
+    position: relative;
+    color: white;
+    overflow: hidden;
+
+    #loading {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.521);
+        backdrop-filter: blur(5px);
+        border-radius: 16px;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+
+    .blur {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+        backdrop-filter: blur(5px);
+        background: rgb(20, 20, 20);
+        border-radius: 16px;
+
+    }
+
+    .content {
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 99 !important;
+
+        nav {
+            padding: 2px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            p {
+                margin-left: 10px;
+            }
+
+            #exit {
+                background-color: transparent;
+                color: white;
+                outline: none;
+                border: 0;
+                cursor: pointer;
+                margin: 5px;
+                padding: 5px;
+                border-radius: 12px;
+                transition: .3s;
+                margin-right: 10px;
+
+                &:hover {
+                    background-color: white;
+                    color: black;
+                }
+            }
+        }
+
+        section {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+
+            .box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 25%;
+                height: 70%;
+                transition: .3s all;
+                background-color: black;
+                background: rgb(20, 20, 20);
+                cursor: pointer;
+                border: 1px solid gold;
+                color: gold;
+                border-radius: 12px;
+
+                &:hover {
+                    box-shadow: 0 0 15px gold;
+                }
+            }
+        }
+    }
+
+
+}
