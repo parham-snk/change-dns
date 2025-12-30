@@ -1,5 +1,5 @@
 # how to use 
-
+![screen-shot](screen-shot.png)
 ## Dependencies
 - electron
 - electron-builder
